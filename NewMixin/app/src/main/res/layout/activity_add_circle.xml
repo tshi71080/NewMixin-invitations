@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F8"
+    android:id="@+id/root_ly"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/head_back_ly"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/common_icon_back_b" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/head_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/head_back_ly"
+            android:gravity="center"
+            android:textColor="@color/tx33"
+            android:textSize="18sp"
+            tools:text="@string/title" />
+
+
+        <LinearLayout
+            android:id="@+id/head_right_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/my_circle"
+                android:textColor="@color/tx33"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/search_bg">
+
+            <EditText
+                android:id="@+id/school_search_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:hint="@string/search_school_hint"
+                android:imeOptions="actionSearch"
+                android:paddingStart="15dp"
+                android:paddingEnd="50dp"
+                android:singleLine="true"
+
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/school_search_ly"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/item_bg"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/school_search_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/discover_icon_search" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:divider="@color/black"
+        android:showDividers="middle" />
+
+
+</LinearLayout>

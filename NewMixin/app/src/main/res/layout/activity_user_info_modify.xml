@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/with_space_color"
+    android:orientation="vertical"
+    tools:context=".ui.mine.UserInfoModifyAct">
+
+    <include layout="@layout/header_common" />
+
+    <RelativeLayout
+        android:id="@+id/modify_avatar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/avatar"
+            android:textColor="#282A2D"
+            android:textSize="16sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/modify_avatar_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            tools:src="@mipmap/signup_icon_avatar"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp" />
+
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
+    <RelativeLayout
+        android:id="@+id/rl_copy_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="秘信号"
+            android:textColor="#282A2D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_mixin_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textColor="#9A989D"
+            tools:text="" />
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
+    <RelativeLayout
+        android:id="@+id/rl_nick_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="昵称"
+            android:textColor="#282A2D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_user_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textColor="#9A989D"
+            tools:text="" />
+
+
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
+
+    <RelativeLayout
+        android:id="@+id/modify_signature_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/signature_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/signature"
+            android:textColor="#282A2D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/signature_content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/signature_tv"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textColor="#9A989D"
+            tools:text="是谁来自山川湖海，却囿于昼夜，厨房与爱。" />
+
+
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
+
+    <RelativeLayout
+        android:id="@+id/ll_sex"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/item_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/gender"
+            android:textColor="#282A2D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/modify_gender_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:singleLine="true"
+            android:textColor="@color/tx33"
+            tools:text="女" />
+
+
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
+
+    <RelativeLayout
+        android:id="@+id/modify_birthday_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/birthday"
+            android:textColor="#282A2D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/modify_birthday_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:singleLine="true"
+            android:textColor="#9A989D"
+            tools:text="1991-11-19" />
+
+
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
+
+    <RelativeLayout
+        android:id="@+id/modify_address_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/address"
+            android:textColor="#282A2D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/modify_address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:singleLine="true"
+            android:textColor="#9A989D"
+            tools:text="山东省临沂市河东区" />
+
+
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
+
+    <RelativeLayout
+        android:id="@+id/modify_hobby_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/hobby"
+            android:textColor="#282A2D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/modify_hobby_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:singleLine="true"
+            android:textColor="#9A989D"
+            tools:text="抽烟 喝酒 烫头" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

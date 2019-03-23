@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F8"
+    android:orientation="vertical"
+    tools:context=".ui.login.SchoolActivity">
+
+    <include layout="@layout/header_common" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/search_bg">
+
+            <EditText
+                android:id="@+id/school_search_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:hint="@string/search_school_hint"
+                android:paddingEnd="50dp"
+                android:paddingStart="15dp"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/school_search_ly"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/school_search_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:src="@mipmap/discover_icon_search" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:divider="@color/black"
+        android:showDividers="middle"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

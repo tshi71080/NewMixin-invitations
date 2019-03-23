@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="waiting">Waiting&#8230;</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="ok">OK</string>
+    <string name="shiPinShiJianBiXuXiaoYuXXMiao">视频时间必须小于%d秒</string>
+
+</resources>

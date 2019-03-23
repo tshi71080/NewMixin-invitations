@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:background="@drawable/item_bg">
+        <LinearLayout
+            android:id="@+id/all_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/avatar_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/signup_icon_avatar"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textColor="@color/tx33"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_add_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/all_ly"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/bg_add_friend_btn"
+            android:padding="5dp"
+            android:text="同意"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_line"/>
+
+
+</LinearLayout>

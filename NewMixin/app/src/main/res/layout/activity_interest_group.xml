@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/with_space_color"
+    android:orientation="vertical"
+    tools:context=".ui.discover.InterestGroupActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/head_back_ly"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/common_icon_back_b" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/head_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/head_back_ly"
+            android:gravity="center"
+            android:textColor="@color/tx33"
+            android:textSize="18sp"
+            tools:text="@string/title" />
+
+        <LinearLayout
+            android:id="@+id/right_ly"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/common_nav_icon_search_b" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/create_group_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:src="@mipmap/contacts_group_icon_new" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center"
+                android:text="@string/create_group"
+                android:textColor="#FF2D2933"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:src="@mipmap/common_icon_group_close"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
+
+
+    <RelativeLayout
+        android:id="@+id/group_notice_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:src="@mipmap/contacts_group_icon_notice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center"
+                android:text="@string/group_notice"
+                android:textColor="#FF2D2933"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/red_dot_tv"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/red_dot"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone"
+            tools:text="99+" />
+
+    </RelativeLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/with_space_color"
+    tools:context=".ui.message.MyContactListFragment">
+
+    <RelativeLayout
+        android:id="@+id/top_ly"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:textColor="@color/tx33"
+            android:textSize="18sp"
+            android:text="通讯录"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true">
+
+            <LinearLayout
+                android:id="@+id/head_phone_ly"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@mipmap/phone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/head_add_ly"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@mipmap/nav_icon_add" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ExpandableListView
+        android:id="@+id/group_elv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_ly"
+        android:layout_marginBottom="150dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp">
+
+        <TextView
+            android:id="@+id/build_group_tv"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/group_btn_sel"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@string/build_new_group"
+            android:textColor="@drawable/group_btn_text_sel" />
+
+        <TextView
+            android:id="@+id/edit_group_tv"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/group_btn_sel"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="@string/edit_group"
+            android:textColor="@drawable/group_btn_text_sel" />
+
+    </LinearLayout>
+
+</RelativeLayout>

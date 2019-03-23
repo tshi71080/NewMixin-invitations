@@ -1,0 +1,2 @@
+include ':app',':imagepicker',':easeui', ':hmspush',":mediapicker",":SmallVideoLib2"
+project(':easeui').projectDir = new File('../easeui/easeui')

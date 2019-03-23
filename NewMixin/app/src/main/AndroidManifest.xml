@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.liuniukeji.mixin">
+
+    <!-- 极光推送需要的权限 -->
+    <uses-permission android:name="com.liuniukeji.mixin.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+
+    <!-- 该权限允许使用ActivityManager访问当前运行的任务栈 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 该权限允许使用PowerManager WakeLocks防止处理器休眠或屏幕变暗，比如百度地图在定位时会用到 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 该权限用于读取系统设置信息 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+
+    <!-- 该权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 该权限用于访问GPS定位块 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 该权限group,用于访问网络，判断或改变网络状态等功能 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- 读取联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 写入联系人权限 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <!-- 该权限用于读取手机状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 该权限group用于读写外置存储的文件，比如app或第三方sdk需要读写缓存文件等 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 该权限用于挂载或者解挂载手机的文件系统，比如挂载外置sd卡，第三方服务需要设置缓存时 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- 该权限用于访问震动传感器，比如当选择图片长按多图进行位置移动时震动反馈需要 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 该权限用于获取手机相机使用权限，比如发送图片需要拍照 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 该权限用于获取手机相机使用闪光灯权限，比如二维码扫描需打开闪光灯 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <!-- 该权限允许应用程序写入系统设置,比如需要对系统设置进行授权更改等，前提而且要是签名级别的app安装包 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- 该权限允许应用程序发起电话呼叫，而无需通过拨号器用户界面让用户确认呼叫 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- 该权限允许应用程序管理对文档的访问，通常作为文档选择器的一部分,比如对文档，多媒体文件的访问和管理 -->
+    <uses-permission
+        android:name="android.permission.MANAGE_DOCUMENTS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- 请求安装APK文件适配8.0 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!-- 该特性group用于访问系统硬件相机与相机自动对焦功能，比如发布带照片内容，扫描二维码时需要 -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!-- 环信使用权限开始 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- 悬浮窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- bugly start -->
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- bugly end -->
+
+
+    <!-- 小米推送相关 -->
+    <permission
+        android:name="com.liuniukeji.mixin.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="com.lnkj.campus.circle.permission.MIPUSH_RECEIVE" />
+
+    <!-- 环信使用权限结束 -->
+    <application
+        android:name=".XyqApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo1"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name=".ui.login.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- <application -->
+        <!-- android:name="chatuioApplication" -->
+        <!-- android:allowBackup="true" -->
+        <!-- android:icon="@drawable/em_logo_uidemo" -->
+        <!-- android:label="@string/app_name"> -->
+
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.login.RegisterActivity" />
+        <activity
+            android:name=".ui.main.PubActivity"
+            android:theme="@style/PubTheme" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".ui.login.SchoolActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".ui.login.DepartmentActivity" />
+        <activity android:name=".ui.login.GradeActivity" />
+        <activity android:name=".ui.mine.setting.SettingActivity" />
+        <activity android:name=".ui.mine.MyCodeActivity" />
+        <activity android:name=".ui.mine.MyVisitorActivity" />
+        <activity android:name=".ui.mine.MyMomentActivity" />
+        <activity android:name=".ui.mine.AlbumActivity" />
+        <activity android:name=".ui.mine.MyReplyActivity" />
+        <activity android:name=".ui.mine.SelfMediaActivity" />
+        <activity android:name=".ui.mine.BlackListActivity" />
+        <activity android:name=".ui.mine.VipCenterActivity" />
+        <activity android:name=".ui.mine.setting.ChangePswActivity" />
+        <activity android:name=".ui.mine.setting.ChangePhoneActivity" />
+        <activity android:name=".ui.mine.setting.FeedbackActivity" />
+        <activity android:name=".ui.mine.setting.RealNameAuthActivity" />
+        <activity android:name=".ui.mine.MyScoreActivity" />
+        <activity android:name=".ui.mine.UserInfoModifyAct" />
+        <activity android:name=".ui.mine.baseinfo.SignatureActivity" />
+        <activity android:name=".ui.mine.baseinfo.BirthdayActivity" />
+        <activity android:name=".ui.mine.MyFansActivity" />
+        <activity android:name=".ui.mine.AttentionActivity" />
+        <activity android:name=".ui.mine.baseinfo.AddressActivity" />
+        <activity android:name=".ui.mine.baseinfo.HobbyActivity" />
+
+        <!-- 支付宝h5支付页面 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!-- 支付宝h5授权页面 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- 环信demo相关开始 -->
+        <!-- 适配Android 7.0, 需要将下方的com.hyphenate.chatuidemo替换为你的app包名 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.liuniukeji.mixin.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.hyphenate.chatui.ui.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 开屏页 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+
+        <!-- 登陆 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+
+        <!-- SDK接口诊断 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.ServiceCheckActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+
+        <!-- 注册 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+        <!-- 聊天页面 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 添加好友 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.AddContactActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateVisible" />
+        <!-- 群组详情 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.GroupDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 群组列表 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.GroupsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 聊天室详情 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.ChatRoomDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 新建聊天室 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.NewChatRoomActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 新建群组 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.NewGroupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- 退出群组提示框 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.ExitGroupDialog"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <!-- 群组选人 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.GroupPickContactsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.PickAtUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 地图 -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseBaiduMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+
+        <!-- 新的朋友邀请消息页面 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.NewFriendsMsgActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 转发消息用户列表页面 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.ForwardMessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- 自定义的contextmenu -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.ContextMenuActivity"
+            android:theme="@style/MyDialogStyle" />
+        <!-- 显示下载大图页面 -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 下载文件 -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowNormalFileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 黑名单 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.BlacklistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+
+        <!-- 公开的群聊列表 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.PublicGroupsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.PublicChatRoomsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 语音通话 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.VoiceCallActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/nornal_style" />
+        <!-- 视频通话 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.VideoCallActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 多人会议 -->
+        <activity
+            android:name="com.hyphenate.chatui.conference.ConferenceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity=":call"
+            android:theme="@style/nornal_style" />
+        <!-- 会议成员邀请 -->
+        <activity
+            android:name="com.hyphenate.chatui.conference.ConferenceInviteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/nornal_style"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 群聊简单信息 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.GroupSimpleDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 群组黑名单用户列表 -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.GroupBlacklistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.GroupSearchMessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.PublicGroupsSeachActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.EditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.SharedFilesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- Ding msg send activity -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseDingMsgSendActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- Ding ack user list activity -->
+        <activity
+            android:name="com.hyphenate.easeui.ui.EaseDingAckUserListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- choose video -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.ImageGridActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.RecorderVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- upload error log -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.DiagnoseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.MultiDeviceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.NamePasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+
+        <!-- iOS offline push nick -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.OfflinePushNickActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- robots list -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.RobotsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- user profile -->
+        <activity
+            android:name="com.hyphenate.chatui.ui.UserProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.SetServersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <!-- 修改昵称 -->
+        <activity android:name=".ui.mine.baseinfo.ChangeNicknameActivity" />
+        <activity android:name=".ui.home.SetFriendMarkActivity" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.OfflinePushSettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+        <activity
+            android:name="com.hyphenate.chatui.ui.CallOptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" />
+
+        <!-- 开机自启动服务 -->
+        <receiver android:name="com.hyphenate.chatui.receiver.StartServiceReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- FCM required start -->
+        <service android:name="com.hyphenate.chatui.fcm.EMFCMMSGService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.hyphenate.chatui.fcm.EMFCMTokenRefreshService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- FCM required end -->
+
+
+        <!-- mi push -->
+        <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedService" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true" />
+
+        <receiver
+            android:name="com.hyphenate.chat.EMMipushReceiver"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR" />
+            </intent-filter>
+        </receiver>
+        <!-- mi push end -->
+
+
+        <!-- 华为 HMS Config -->
+        <!--
+            接入HMSSDK PUSH模块需要注册，第三方相关 :接收Push消息（注册、Push消息、Push连接状态）广播，
+                此receiver类需要开发者自己创建并继承com.huawei.hms.support.api.push.PushReceiver类，
+                参考示例代码中的类：com.huawei.hmsagent.HuaweiPushRevicer
+        -->
+        <receiver android:name="com.hyphenate.chatui.receiver.HMSPushReceiver">
+            <intent-filter>
+
+                <!-- 必须,用于接收 TOKEN -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <!-- 必须，用于接收消息 -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <!-- 可选，用于点击通知栏或通知栏上的按钮后触发 onEvent 回调 -->
+                <action android:name="com.huawei.android.push.intent.CLICK" />
+                <!-- 可选，查看 PUSH 通道是否连接，不查看则不需要 -->
+                <action android:name="com.huawei.intent.action.PUSH_STATE" />
+            </intent-filter>
+        </receiver>
+        <!-- huawei push end -->
+
+
+        <!-- 设置环信应用的appkey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1192180721177434#mixin" />
+        <!-- 声明sdk所需的service -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true"
+            tools:ignore="ExportedService" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- 声明sdk所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 百度地图所需的service -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="3ecea51f560650b1ed8a4b99808f52e8" />
+
+        <!-- 环信demo相关结束 -->
+
+
+        <!-- 图片选择页面 -->
+        <activity android:name=".ui.multiimage.addpic.ImageBucketChooseActivity" />
+        <activity android:name=".ui.multiimage.addpic.ImageChooseActivity" />
+        <!-- 图片选择页面 -->
+
+
+        <!-- 视频选择页面 -->
+        <activity
+            android:name="vn.tungdx.mediapicker.activities.MediaPickerActivity"
+            android:theme="@style/MediaPickerTheme" />
+        <!-- 视频选择页面 -->
+
+
+        <!-- 视频播放页面 -->
+        <activity android:name=".ui.pub.video.VideoPlayActivity" />
+        <!-- 视频播放页面 -->
+
+        <activity android:name=".ui.mine.ScoreDetailActivity" />
+        <activity android:name=".ui.discover.PeopleNearbyActivity" />
+        <activity android:name=".ui.discover.GroupNearbyActivity" />
+        <activity android:name=".ui.discover.InterestGroupActivity" />
+        <activity android:name=".ui.discover.GroupDetailActivity" />
+        <activity android:name=".ui.pub.note.PubNotesActivity" />
+        <activity android:name=".ui.pub.video.PubVideoActivity" />
+        <activity android:name=".ui.discover.BroSisActivity" />
+        <activity android:name=".ui.discover.UsedMarketActivity" />
+        <activity android:name=".ui.message.ContactListActivity" />
+        <activity android:name=".ui.discover.AlumnActivity" />
+        <activity android:name=".ui.discover.MomentNearActivity" />
+        <activity android:name=".ui.discover.RecommendFriendActivity" />
+        <activity
+            android:name=".ui.home.AddCircleActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".ui.home.MyCircleActivity" />
+        <activity
+            android:name=".ui.home.ReportActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".ui.home.MomentDetailActivity" />
+
+        <!-- 好友管理对话框 -->
+        <activity
+            android:name=".ui.message.FriendEditDialog"
+            android:theme="@style/act_compat_dialog" />
+        <!-- 好友管理对话框 -->
+
+        <activity android:name=".ui.message.EditGroupActivity" />
+        <activity android:name=".ui.message.GroupListActivity" />
+        <activity android:name=".ui.message.PhoneFriendActivity" />
+        <activity android:name=".ui.chat.UserProfileAct" />
+        <activity android:name=".ui.discover.GroupMemberDetailActivity" />
+        <activity android:name=".ui.discover.GroupPswActivity" />
+        <activity android:name=".ui.discover.SearchUserActivity" />
+        <activity android:name=".ui.discover.SearchGroupActivity" />
+        <activity android:name=".ui.home.FriendProfileActivity" />
+        <activity android:name=".ui.login.GetPswActivity" />
+        <activity android:name=".widget.WebViewActivity" />
+        <activity android:name=".ui.mine.setting.InviteCodeActivity" />
+        <activity android:name=".ui.discover.CreateGroupActivity" />
+        <activity android:name=".ui.discover.GroupNameActivity" />
+        <activity android:name=".ui.discover.GroupIntroActivity" />
+        <activity android:name=".ui.discover.GroupNoticeActivity" />
+        <activity android:name=".ui.discover.GroupMembersActivity" />
+        <activity android:name=".ui.discover.InviteFriendGroupActivity" />
+        <activity android:name=".ui.pub.forward.ForwardActivity" />
+        <activity android:name="com.hyphenate.chatui.scanner.ScannerActivity" />
+
+        <service android:name=".util.GPSService" />
+        <!-- 微信回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 极光推送开始 -->
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置 android:process 参数将 PushService 放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 3.0.9 Required SDK 核心功能 -->
+        <provider
+            android:name="cn.jpush.android.service.DataProvider"
+            android:authorities="com.liuniukeji.mixin.DataProvider"
+            android:exported="true"
+            tools:replace="android:exported" />
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的 JPush 服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，或把 enabled 设置成 false ；拉起服务被关闭，App 不会通过拉起服务拉起其他的 App，也不会被其他 App 拉起。 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="com.liuniukeji.mixin" />
+            </intent-filter>
+        </service>
+
+        <!-- since 3.1.0 Required SDK 核心功能 -->
+        <provider
+            android:name="cn.jpush.android.service.DownloadProvider"
+            android:authorities="com.liuniukeji.mixin.DownloadProvider"
+            android:exported="true" />
+
+        <!-- Required SDK 核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+
+                <category android:name="com.liuniukeji.mixin" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK 核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.liuniukeji.mixin" />
+            </intent-filter>
+        </activity>
+        <!-- SDK 核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@style/MyDialogStyle">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.liuniukeji.mixin" />
+            </intent-filter>
+        </activity>
+
+        <!-- Required SDK 核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Required SDK 核心功能 -->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+
+        <!-- Required since 3.0.7 -->
+        <!-- 新的 tag/alias 接口结果返回需要开发者配置一个自定的广播 -->
+        <!-- 该广播需要继承 JPush 提供的 JPushMessageReceiver 类, 并如下新增一个 Intent-Filter -->
+        <receiver
+            android:name=".receiver.JiGuangReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.liuniukeji.mixin" />
+            </intent-filter>
+        </receiver>
+
+        <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
+        <receiver android:name=".receiver.JPushSetAliasCallbackReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="com.liuniukeji.mixin" />
+            </intent-filter>
+        </receiver>
+        <!-- Required  . Enable it you can get statistics data with channel -->
+
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <!-- Required. AppKey copied from Portal -->
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="4fd626ad9f22230b92a29b71" />
+
+        <!-- 极光推送结束 -->
+
+
+        <!-- 视频录制 -->
+        <activity android:name="com.mabeijianxi.smallvideorecord2.MediaRecorderActivity" />
+        <activity android:name=".ui.message.NewFriedsApplyActivity" />
+        <activity android:name=".ui.areacode.AreaCodeActivity" />
+        <activity android:name=".ui.multisend.MultiChooseActivity" />
+        <activity android:name=".ui.discover.GroupCodeActivity" />
+        <activity
+            android:name=".ui.multisend.MultiSendActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".ui.discover.GroupTransformActivity" />
+        <activity android:name="com.hyphenate.chatui.ui.NewRecordVideoActivity" />
+    </application>
+
+</manifest>

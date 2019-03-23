@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hyphenate="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F8"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.hyphenate.easeui.widget.EaseTitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            hyphenate:titleBarTitle="@string/session" />
+
+
+        <include layout="@layout/myease_header_message" />
+
+
+        <FrameLayout
+            android:id="@+id/fl_error_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+
+        <com.liuniukeji.mixin.widget.MyEaseConversationList
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:cacheColorHint="#00000000"
+            hyphenate:cvsListPrimaryTextSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

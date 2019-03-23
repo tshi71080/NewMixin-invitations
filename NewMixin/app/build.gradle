@@ -1,0 +1,166 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.liuniukeji.mixin"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86'
+        }
+        multiDexEnabled true
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "4fd626ad9f22230b92a29b71", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+//    signingConfigs {
+//        debug {
+//            storeFile file("D:\\liuniu.keys")
+//            storePassword "lnkj@2015"
+//            keyAlias "liuniu"
+//            keyPassword "lnkj@2015"
+//        }
+//    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    greendao {
+        schemaVersion 1 // 数据库schema版本，也可以理解为数据库版本号
+        daoPackage 'com.liuniukeji.greendao.gen'//设置DaoMaster、DaoSession、Dao包名
+        targetGenDir 'src/main/java' //设置DaoMaster、DaoSession、Dao目录
+        //targetGenDirTest：设置生成单元测试目录
+        //generateTests：设置自动生成单元测试用例
+    }
+
+    allprojects {
+        repositories {
+            //BaseRecyclerViewAdapterHelper 使用
+            maven { url "https://jitpack.io" }
+            maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+            maven { url "https://raw.githubusercontent.com/Pgyer/mvn_repo_pgyer/master" }
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation 'com.android.support:design:27.1.1'
+        implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+        implementation 'com.android.support:support-vector-drawable:27.1.1'
+        implementation 'com.android.support:recyclerview-v7:27.1.1'
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.1'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+        //multi dex支持
+        implementation 'com.android.support:multidex:1.0.3'
+        //支付宝
+        implementation files('libs/alipaySdk-20161129.jar')
+        //六牛安全监测包
+        implementation files('libs/lnsecure.jar')
+        //蒲公英
+        implementation files('libs/pgyer_sdk_2.7.6.jar')
+        //事件总线工具
+        implementation 'org.greenrobot:eventbus:3.1.1'
+        //数据库组件
+        implementation 'org.greenrobot:greendao:3.2.2'
+        //控件管理注解工具
+        implementation 'com.jakewharton:butterknife:8.8.1'
+        annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+        //网络框架
+        implementation 'com.lzy.net:okgo:2.1.4'
+        implementation 'com.lzy.net:okrx:0.1.2'
+        implementation 'com.lzy.net:okserver:1.1.3'
+        //json解析
+        implementation 'com.google.code.gson:gson:2.8.2'
+        implementation 'com.alibaba:fastjson:1.2.17'
+        //基本工具框架
+        implementation 'org.xutils:xutils:3.5.0'
+        //下拉刷新库
+        implementation 'in.srain.cube:ultra-ptr:1.0.11'
+        //圆形ImageView
+        implementation 'de.hdodenhof:circleimageview:2.1.0'
+        //首页面顶部滑动TAB
+        implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+        //数据列表下拉刷新相关
+        implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+        implementation 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
+        //图片加载工具
+        implementation 'com.github.bumptech.glide:glide:3.8.0'
+        //头像图片选择(包含裁切)
+        implementation project(':imagepicker')
+        //单张图片选择
+        implementation 'com.jph.takephoto:takephoto_library:4.0.3'
+
+        //环信EASEUI
+        api project(':easeui')
+
+        //华为推送
+        api project(path: ':hmspush')
+
+        // Google firebase cloud messaging
+        api 'com.google.firebase:firebase-messaging:11.4.0'
+
+        api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+        api 'com.parse:parse-android:1.13.1'
+
+        //阿里OSS
+        implementation 'com.aliyun.dpa:oss-android-sdk:2.8.4'
+
+        //九宫格图片
+        implementation 'com.lzy.widget:ninegridview:0.2.0'
+
+        //视频选择
+        implementation project(':mediapicker')
+
+        //视频播放
+        implementation 'cn.jzvd:jiaozivideoplayer:6.2.12'
+
+        //视频缓存
+        implementation 'com.danikula:videocache:2.7.1'
+
+        //微信
+        implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+        // 极光推送
+        implementation 'cn.jiguang.sdk:jpush:3.1.6'
+        implementation 'cn.jiguang.sdk:jcore:1.2.5'
+
+        implementation 'com.google.zxing:core:3.3.0'
+        //环信视频录制
+        api project(':SmallVideoLib2')
+    }
+
+}
+
+dependencies {
+    implementation 'com.android.support:support-v4:27.+'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+}

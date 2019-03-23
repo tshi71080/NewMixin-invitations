@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/with_space_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/header_common" />
+
+    <View style="@style/divider_line" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/group_avatar_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/group_avatar"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/group_avatar_iv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/signup_icon_avatar"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp" />
+
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/group_name_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/my_group_name"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/group_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:textColor="#9A989D"
+                    android:textSize="14sp"
+                    tools:text="材科一官方" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/group_brief_info_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:id="@+id/brief_title_ly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/group_brief_info"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/group_brief_info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/brief_title_ly"
+                    android:gravity="right"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:textColor="#9A989D"
+                    android:textSize="14sp"
+                    tools:text="09级材科一班官方讨论群09级材科一班官方讨论群" />
+            </RelativeLayout>
+
+
+            <View style="@style/divider_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <View style="@style/divider_line" />
+
+                <RelativeLayout
+                    android:id="@+id/invite_friend_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/item_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/invite_friend"
+                            android:textColor="#2D2933"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:src="@mipmap/common_icon_group_close" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/group_psw_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/item_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/group_psw"
+                            android:textColor="#2D2933"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:src="@mipmap/common_icon_group_close" />
+                </RelativeLayout>
+
+                <View style="@style/divider_line"
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/item_bg"
+                    android:paddingLeft="20dp"
+                    android:visibility="gone"
+                    android:paddingRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="开启群密码"
+                            android:textColor="#2D2933"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/open_psw_sw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:thumb="@drawable/thumb"
+                        android:track="@drawable/track" />
+
+                </RelativeLayout>
+
+                <View style="@style/divider_line" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/item_bg"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/is_open_group_approve"
+                            android:textColor="#2D2933"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                    <Switch
+                        android:id="@+id/open_approve_sw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:thumb="@drawable/thumb"
+                        android:track="@drawable/track" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/create_group_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/default_btn_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

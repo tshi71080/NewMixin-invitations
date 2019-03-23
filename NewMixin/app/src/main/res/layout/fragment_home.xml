@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tl_2"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="@color/white"
+            tl:tl_divider_color="#1A000000"
+            tl:tl_divider_padding="13dp"
+            tl:tl_indicator_color="#282A2D"
+            tl:tl_indicator_height="1.5dp"
+            tl:tl_indicator_width_equal_title="true"
+            tl:tl_tab_padding="50dp"
+            tl:tl_tab_space_equal="false"
+            tl:tl_textBold="BOTH"
+            tl:tl_textSelectColor="#282A2D"
+            tl:tl_textUnselectColor="#BCBCBC"
+            tl:tl_textsize="16sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/nav_add_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/nav_icon_add"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

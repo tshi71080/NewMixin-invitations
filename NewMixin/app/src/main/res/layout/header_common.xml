@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:layout_height="45dp">
+
+    <LinearLayout
+        android:id="@+id/head_back_ly"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/item_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/common_icon_back_b" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/head_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/tx33"
+        android:layout_toRightOf="@+id/head_back_ly"
+        android:textSize="18sp"
+        tools:text="@string/title" />
+
+    <TextView
+        android:id="@+id/tv_right_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存二维码"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:textColor="@color/color_yellow"
+        android:visibility="gone"/>
+
+</RelativeLayout>

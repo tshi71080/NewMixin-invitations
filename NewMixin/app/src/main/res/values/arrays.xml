@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="google_colors">
+        <!--<item>@color/red</item>-->
+        <!--<item>@color/blue</item>-->
+        <!--<item>@color/yellow</item>-->
+        <!--<item>@color/green</item>-->
+        <item>@color/color_main</item>
+    </integer-array>
+
+    <!--开通时长-->
+    <string-array name="vip_months">
+        <item>1个月</item>
+        <item>3个月</item>
+        <item>6个月</item>
+        <item>1年</item>
+        <item>2年</item>
+        <item>3年</item>
+    </string-array>
+
+    <!--分组颜色值-->
+    <string-array name="group_color">
+        <item>#FAD81A</item>
+        <item>#FCB91A</item>
+        <item>#FF8F2C</item>
+        <item>#FF5959</item>
+        <item>#1DE9E2</item>
+        <item>#33BCFB</item>
+        <item>#B852FF</item>
+        <item>#7736FC</item>
+        <item>#34F7B5</item>
+        <item>#45E376</item>
+        <item>#736257</item>
+        <item>#444C62</item>
+    </string-array>
+
+    <string-array name="grade_name">
+        <item>2018级</item>
+        <item>2017级 </item>
+        <item>2016级</item>
+        <item>2015级</item>
+        <item>2014级</item>
+        <item>2013级</item>
+        <item>2012级</item>
+        <item>2011级</item>
+        <item>2010级</item>
+        <item>2009级</item>
+    </string-array>
+
+
+</resources>

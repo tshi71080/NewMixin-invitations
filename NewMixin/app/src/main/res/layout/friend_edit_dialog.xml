@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:id="@+id/top_title_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:text="好友管理"
+            android:textColor="#25252A"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/follow_option_ly"
+        android:layout_below="@id/top_title_ly"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:background="#F8F9FB"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:text="将用户移动至"
+            android:textColor="#25252A"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/group_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/follow_option_ly"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/sure_ly"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:background="#F8F9FB"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:src="@mipmap/contact_icon_secret" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="悄悄关注"
+                android:textColor="#25252A"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:text="(VIP专属)"
+                android:textColor="#B0B0B0"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/follow_sw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:checked="false"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/sure_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F8F9FB" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/item_bg"
+            android:gravity="center"
+            android:text="@string/sure"
+            android:textColor="#3462FF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

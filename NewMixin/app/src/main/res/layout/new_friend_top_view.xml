@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_group"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:textColor="#25252A"
+                android:text="新朋友" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/nav_tv_dot"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ic_red_dot"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:minWidth="10dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@mipmap/common_icon_group_close"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

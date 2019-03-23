@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00000000"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="270.0dip"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="25dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_marginBottom="15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="性别"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18.0dip"
+            android:layout_marginRight="18.0dip"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="男"
+                    android:button="@null"
+                    android:drawableRight="@drawable/group_check_bg"
+                    android:padding="@dimen/dp_10"
+                    android:textSize="@dimen/sp_14"
+                    android:background="@color/transparent"
+                    android:textColor="@color/black_deep"/>
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="女"
+                    android:button="@null"
+                    android:drawableRight="@drawable/group_check_bg"
+                    android:padding="@dimen/dp_10"
+                    android:textSize="@dimen/sp_14"
+                    android:background="@color/transparent"
+                    android:textColor="@color/black_deep"/>
+                <RadioButton
+                    android:id="@+id/rb_secret"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="保密"
+                    android:button="@null"
+                    android:drawableRight="@drawable/group_check_bg"
+                    android:padding="@dimen/dp_10"
+                    android:textSize="@dimen/sp_14"
+                    android:background="@color/transparent"
+                    android:textColor="@color/black_deep"/>
+
+            </RadioGroup>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_marginTop="25.0dip"
+            android:background="@color/color_line" />
+
+        <LinearLayout
+            android:id="@+id/update_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="44.0dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="1.0dip">
+
+            <TextView
+                android:id="@+id/no"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/gray_normal"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="1.0px"
+                android:layout_height="match_parent"
+                android:background="@color/color_line" />
+
+            <TextView
+                android:id="@+id/yes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/with_space_color"
+    android:orientation="vertical"
+    tools:context=".ui.mine.setting.SettingActivity">
+
+    <include layout="@layout/header_common" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/setting_change_psw_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/change_password"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/setting_change_phone_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/change_phone"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line"
+                android:visibility="gone"/>
+
+
+            <RelativeLayout
+                android:id="@+id/setting_real_name_auth_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/real_name_auth"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/real_name_state_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textColor="#FF4E4E"
+                    android:textSize="14sp"
+                    tools:text="未认证" />
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line"
+                android:visibility="gone"/>
+
+
+            <RelativeLayout
+                android:id="@+id/setting_write_invite_code_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/write_invite_code"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/invite_code_tip_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textColor="#FF4E4E"
+                    android:textSize="14sp"
+                    android:text="抢一个月会员特权" />
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+
+            <RelativeLayout
+                android:id="@+id/setting_clear_cache_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/clear_cache"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/cache_size_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textColor="#9A989D"
+                    android:textSize="14sp"
+                    tools:text="13.48MB" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+
+            <RelativeLayout
+                android:id="@+id/setting_feedback_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/feedback"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+
+            <RelativeLayout
+                android:id="@+id/setting_version_update_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/version_update"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/version_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textColor="#9A989D"
+                    android:textSize="14sp"
+                    tools:text="V1.3.3" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+
+            <RelativeLayout
+                android:id="@+id/setting_about_us_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/about_us"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+
+            <TextView
+                android:id="@+id/quit_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/default_btn_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/quit_safely"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

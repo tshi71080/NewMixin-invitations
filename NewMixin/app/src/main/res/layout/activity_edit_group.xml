@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/with_space_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/top_ly"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/head_back_ly"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/common_icon_back_b" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/head_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/head_back_ly"
+            android:gravity="center"
+            android:textColor="@color/tx33"
+            android:textSize="18sp"
+            tools:text="@string/title" />
+
+
+        <LinearLayout
+            android:id="@+id/delete_ly"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_group"
+                android:textColor="#FF455B" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/edit_group_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/group_name_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="分组名称"
+                        android:textColor="#6F6F74"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/group_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textColor="#25252A"
+                    android:textSize="16sp"
+                    tools:text="材料一班" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="分组颜色"
+                        android:textColor="#6F6F74"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+                    <com.liuniukeji.mixin.widget.AutoMeasureHeightGridView
+                        android:id="@+id/group_color_grv"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:horizontalSpacing="5dp"
+                        android:numColumns="4"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="5dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/sure_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F8F9FB" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/item_bg"
+                android:gravity="center"
+                android:text="@string/sure"
+                android:textColor="#3462FF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

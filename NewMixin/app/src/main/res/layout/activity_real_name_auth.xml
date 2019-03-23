@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/with_space_color"
+    android:orientation="vertical"
+    tools:context=".ui.mine.setting.RealNameAuthActivity">
+
+    <include layout="@layout/header_common" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/item_bg"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/name"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/auth_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="40dp"
+                    android:background="@null"
+                    android:gravity="center|end"
+                    android:hint="@string/fill_name"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="0dp"
+                    android:textColorHint="#C5C5C5"
+                    android:textSize="15sp" />
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/auth_school_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/school"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/auth_school_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="40dp"
+                    android:gravity="center|end"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/choose_school"
+                    android:textColor="#C5C5C5"
+                    android:textSize="15sp" />
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/auth_department_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/department"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/auth_department_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="40dp"
+                    android:gravity="center|end"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/choose_department"
+                    android:textColor="#C5C5C5"
+                    android:textSize="15sp" />
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/auth_grade_rl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/grade"
+                        android:textColor="#282A2D"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/auth_grade_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="40dp"
+                    android:gravity="center|end"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/choose_grade"
+                    android:textColor="#C5C5C5"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@mipmap/common_icon_group_close" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/auth_tip1"
+                    android:textColor="#282A2D"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/cer_bg">
+
+                    <ImageView
+                        android:id="@+id/auth_cer_front_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <ImageView
+                        android:id="@+id/auth_cer_front_choose_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/me_data_certificate_btn_add" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/auth_tip2"
+                    android:textColor="#282A2D"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/cer_bg">
+
+                    <ImageView
+                        android:id="@+id/auth_cer_back_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <ImageView
+                        android:id="@+id/auth_cer_back_choose_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/me_data_certificate_btn_add" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/auth_tip_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="@string/auth_tip3"
+                android:textColor="#AEAEAE"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/auth_submit_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="80dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/default_btn_selector"
+                android:gravity="center"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
