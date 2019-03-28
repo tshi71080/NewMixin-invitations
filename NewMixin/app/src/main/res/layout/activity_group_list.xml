@@ -5,7 +5,61 @@
     android:background="@color/with_space_color"
     android:orientation="vertical">
 
-    <include layout="@layout/header_common" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_height="45dp">
+
+        <LinearLayout
+            android:id="@+id/head_back_ly"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/common_icon_back_b" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/head_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/tx33"
+            android:layout_toRightOf="@+id/head_back_ly"
+            android:textSize="18sp"
+            android:text="@string/title" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true">
+
+            <LinearLayout
+                android:id="@+id/head_add_ly"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@mipmap/nav_icon_add" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeLayout"

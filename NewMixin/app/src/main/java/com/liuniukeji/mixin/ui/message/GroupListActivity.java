@@ -17,6 +17,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.liuniukeji.mixin.R;
 import com.liuniukeji.mixin.util.currency.EmptyUtils;
+import com.liuniukeji.mixin.ui.discover.CreateGroupActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,8 @@ public class GroupListActivity extends AppCompatActivity implements GroupListCon
     RecyclerView rvList;
     @BindView(R.id.swipeLayout)
     SwipeRefreshLayout swipeLayout;
+    @BindView(R.id.head_add_ly)
+    LinearLayout head_add_ly;
 
     GroupListContract.Presenter presenter;
 
@@ -72,6 +75,13 @@ public class GroupListActivity extends AppCompatActivity implements GroupListCon
         swipeLayout.setEnabled(true);
         //数据一次返回不需要加载更多
         mAdapter.setEnableLoadMore(false);
+        //新建好友分组按钮
+        head_add_ly.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent().setClass(GroupListActivity.this, CreateGroupActivity.class));
+            }
+        });
 
         //获取列表数据
         presenter.getGroupList();
@@ -99,6 +109,8 @@ public class GroupListActivity extends AppCompatActivity implements GroupListCon
                 finish();
             }
         });
+
+
 
     }
 

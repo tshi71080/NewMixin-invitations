@@ -24,6 +24,7 @@ import com.hyphenate.chatui.ui.AddContactActivity;
 import com.hyphenate.chatui.ui.ChatActivity;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.liuniukeji.mixin.R;
+import com.liuniukeji.mixin.ui.discover.InterestGroupActivity;
 import com.liuniukeji.mixin.base.BaseFragment;
 import com.liuniukeji.mixin.util.Constants;
 import com.liuniukeji.mixin.util.XImage;
@@ -55,10 +56,6 @@ public class MyContactListFragment extends BaseFragment implements ContactListCo
     RelativeLayout topLy;
     @BindView(R.id.group_elv)
     ExpandableListView groupElv;
-    @BindView(R.id.build_group_tv)
-    TextView buildGroupTv;
-    @BindView(R.id.edit_group_tv)
-    TextView editGroupTv;
 
     Unbinder unbinder;
 
@@ -100,20 +97,40 @@ public class MyContactListFragment extends BaseFragment implements ContactListCo
 
     @Override
     protected void processLogic() {
+        //列表头部
         View headView = LayoutInflater.from(getContext()).inflate(R.layout.new_friend_top_view,null);
-        dotView = headView.findViewById(R.id.nav_tv_dot);
-        headView.setOnClickListener(new View.OnClickListener() {
+        //新的朋友
+        RelativeLayout relativeLayout_new_friend = headView.findViewById(R.id.relativeLayout_new_friend);
+        relativeLayout_new_friend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),NewFriedsApplyActivity.class);
                 startActivity(intent);
             }
         });
+        dotView = relativeLayout_new_friend.findViewById(R.id.nav_friend_dot);
         if(MMKV.defaultMMKV().getInt("add_friend",0)==1){
             dotView.setVisibility(View.VISIBLE);
         }else{
             dotView.setVisibility(View.GONE);
         }
+        //群组
+        RelativeLayout relativeLayout_group = headView.findViewById(R.id.relativeLayout_group);
+        relativeLayout_group.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), InterestGroupActivity.class));
+            }
+        });
+        //好友分组
+        RelativeLayout relativeLayout_friend_group = headView.findViewById(R.id.relativeLayout_friend_group);
+        relativeLayout_friend_group.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent().setClass(getActivity(), GroupListActivity.class));
+            }
+        });
+        //
         presenter = new ContactListPresenter(getActivity());
         presenter.attachView(this);
 
@@ -180,7 +197,7 @@ public class MyContactListFragment extends BaseFragment implements ContactListCo
     }
 
 
-    @OnClick({R.id.head_add_ly, R.id.head_phone_ly, R.id.build_group_tv, R.id.edit_group_tv})
+    @OnClick({R.id.head_add_ly, R.id.head_phone_ly})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.head_add_ly:
@@ -190,18 +207,6 @@ public class MyContactListFragment extends BaseFragment implements ContactListCo
             case R.id.head_phone_ly:
                 //手机通讯录
                 startActivity(new Intent().setClass(getActivity(), PhoneFriendActivity.class));
-                break;
-            case R.id.build_group_tv:
-                //新建分组
-                //buildNewGroup();
-                Intent intent = new Intent();
-                intent.putExtra("type", 1);
-                intent.setClass(getActivity(), EditGroupActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.edit_group_tv:
-                //编辑分组
-                startActivity(new Intent().setClass(getActivity(), GroupListActivity.class));
                 break;
             default:
                 break;
