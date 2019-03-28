@@ -28,57 +28,57 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/group_ly"
-            android:layout_width="45dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/item_bg"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/common_icon_group_b" />
-        </LinearLayout>
-
-        <!--<RelativeLayout-->
-            <!--android:id="@+id/contact_ly"-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/group_ly"-->
             <!--android:layout_width="45dp"-->
             <!--android:layout_height="match_parent"-->
-            <!--android:layout_marginStart="10dp"-->
-            <!--android:layout_marginLeft="10dp"-->
             <!--android:background="@drawable/item_bg"-->
             <!--android:clickable="true"-->
-            <!--android:focusable="true">-->
+            <!--android:focusable="true"-->
+            <!--android:gravity="center">-->
 
             <!--<ImageView-->
-                <!--android:id="@+id/iv_tongxun"-->
                 <!--android:layout_width="25dp"-->
                 <!--android:layout_height="25dp"-->
-                <!--android:layout_centerInParent="true"-->
-                <!--android:src="@mipmap/nav_icon_add" />-->
+                <!--android:src="@drawable/common_icon_group_b" />-->
+        <!--</LinearLayout>-->
 
-            <!--<TextView-->
-                <!--android:id="@+id/nav_red_dot"-->
-                <!--android:layout_width="8dp"-->
-                <!--android:layout_height="8dp"-->
-                <!--android:layout_marginStart="8dp"-->
-                <!--android:layout_marginLeft="8dp"-->
-                <!--android:background="@drawable/icon_red_dot"-->
-                <!--android:ellipsize="end"-->
-                <!--android:gravity="center"-->
-                <!--android:minWidth="10dp"-->
-                <!--android:paddingLeft="3dp"-->
-                <!--android:paddingRight="3dp"-->
-                <!--android:singleLine="true"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textSize="12sp"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:layout_alignTop="@+id/iv_tongxun"-->
-                <!--android:visibility="gone"/>-->
-        <!--</RelativeLayout>-->
+        <RelativeLayout
+            android:id="@+id/contact_ly"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/item_bg"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/iv_tongxun"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/nav_icon_add" />
+
+            <TextView
+                android:id="@+id/nav_red_dot"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/icon_red_dot"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:minWidth="10dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/iv_tongxun"
+                android:visibility="gone"/>
+        </RelativeLayout>
 
     </LinearLayout>
 

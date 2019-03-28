@@ -88,7 +88,7 @@ public class MyConversationListFragment extends EaseBaseFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflatd er inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.myease_fragment_conversation_list, container, false);
     }
 
