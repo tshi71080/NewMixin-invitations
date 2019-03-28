@@ -114,7 +114,7 @@ public class MyConversationListFragment extends EaseBaseFragment {
         //群组
 //        groupLy = (LinearLayout) getView().findViewById(R.id.group_ly);
         //联系人
-//        contactLy = (RelativeLayout) getView().findViewById(R.id.contact_ly);
+        contactLy = (RelativeLayout) getView().findViewById(R.id.contact_ly);
         //有新朋友红点标识
         dotView = getView().findViewById(R.id.nav_red_dot);
         //是否有添加好友的请求
