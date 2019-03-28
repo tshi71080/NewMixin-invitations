@@ -13,10 +13,12 @@ import android.widget.PopupWindow;
 
 import com.hyphenate.chatui.ui.AddContactActivity;
 import com.liuniukeji.mixin.R;
+import com.liuniukeji.mixin.ui.discover.CreateGroupActivity;
 import com.liuniukeji.mixin.ui.main.MainActivity;
 
 /**
  * 自定义popupWindow
+ * 弹出的下拉框
  *
  * @author wwj
  */
@@ -49,8 +51,10 @@ public class AddPopWindow extends PopupWindow {
         this.setAnimationStyle(R.style.AnimationPreview);
         LinearLayout addFriendLayout = (LinearLayout) conentView
                 .findViewById(R.id.add_friend_layout);//添加好友
+        LinearLayout create_group_layout = (LinearLayout) conentView
+                .findViewById(R.id.create_group_layout);//发起群聊
         LinearLayout QcadLayout = (LinearLayout) conentView
-                .findViewById(R.id.saosao_layout);//saosao_layout
+                .findViewById(R.id.saosao_layout);//扫一扫
 
         addFriendLayout.setOnClickListener(new OnClickListener() {
 
@@ -58,6 +62,14 @@ public class AddPopWindow extends PopupWindow {
             public void onClick(View v) {
                 AddPopWindow.this.dismiss();
                 context.startActivity(new Intent(context, AddContactActivity.class));
+            }
+        });
+        create_group_layout.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                AddPopWindow.this.dismiss();
+                context.startActivity(new Intent(context, CreateGroupActivity.class));
             }
         });
         QcadLayout.setOnClickListener(new OnClickListener() {

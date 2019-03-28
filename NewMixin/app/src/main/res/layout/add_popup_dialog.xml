@@ -45,6 +45,35 @@
             android:visibility="visible" />
 
         <LinearLayout
+            android:id="@+id/create_group_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:src="@drawable/friends" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="发起群聊"
+                android:textColor="@color/white"
+                android:textSize="15dip" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/white"
+            android:visibility="visible" />
+
+        <LinearLayout
             android:id="@+id/saosao_layout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

@@ -608,7 +608,7 @@ public class MediaRecorderActivity extends Activity implements
     public void onEncodeComplete() {
         hideProgress();
         Intent intent = null;
-        /*try {
+        try {
             intent = new Intent(this, Class.forName(getIntent().getStringExtra(OVER_ACTIVITY_NAME)));
             intent.putExtra(MediaRecorderActivity.OUTPUT_DIRECTORY, mMediaObject.getOutputDirectory());
             intent.putExtra(MediaRecorderActivity.VIDEO_URI, mMediaObject.getOutputTempTranscodingVideoPath());
@@ -617,13 +617,8 @@ public class MediaRecorderActivity extends Activity implements
             startActivity(intent);
         } catch (ClassNotFoundException e) {
             throw new IllegalArgumentException("需要传入录制完成后跳转的Activity的全类名");
-        }*/
+        }
 
-        intent = new Intent();
-        intent.putExtra(MediaRecorderActivity.OUTPUT_DIRECTORY, mMediaObject.getOutputDirectory());
-        intent.putExtra(MediaRecorderActivity.VIDEO_URI, mMediaObject.getOutputTempTranscodingVideoPath());
-        intent.putExtra(MediaRecorderActivity.VIDEO_SCREENSHOT, mMediaObject.getOutputVideoThumbPath());
-        setResult(0x1111,intent);
         finish();
     }
 

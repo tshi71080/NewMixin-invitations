@@ -12,7 +12,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
-            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86'
+            abiFilters "armeabi","armeabi-v7a","arm64-v8a","x86","x86_64"
         }
         multiDexEnabled true
         manifestPlaceholders = [

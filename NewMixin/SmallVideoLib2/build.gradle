@@ -13,7 +13,7 @@ android {
             }
         }
         ndk{
-            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86'
+            abiFilters "arm64-v8a","x86"
         }
     }
     buildTypes {
@@ -31,8 +31,18 @@ android {
         }
     }
 
+//    publish {
+//
+//        userOrg = 'mabeijianxi'//bintray.com用户名
+//        groupId = 'com.mabeijianxi'//jcenter上的路径
+//        artifactId = 'small-video-record2'//项目名称
+//        publishVersion = '2.0.3'//版本号
+//        desc = '利用FFmpeg来小视频录制与压缩处理!'//描述，不重要
+//        website = 'https://github.com/mabeijianxi/small-video-record'//网站，不重要
+//    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
 }
