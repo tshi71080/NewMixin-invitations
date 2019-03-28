@@ -66,7 +66,7 @@ public class MyConversationListFragment extends EaseBaseFragment {
     protected List<EMConversation> conversationList = new ArrayList<EMConversation>();
     protected MyEaseConversationList conversationListView;
     protected FrameLayout errorItemContainer;
-    protected LinearLayout groupLy;
+//    protected LinearLayout groupLy;
     protected RelativeLayout contactLy;
     protected TextView dotView;
 
@@ -112,9 +112,9 @@ public class MyConversationListFragment extends EaseBaseFragment {
         errorItemContainer = (FrameLayout) getView().findViewById(R.id.fl_error_item);
 
         //群组
-        groupLy = (LinearLayout) getView().findViewById(R.id.group_ly);
+//        groupLy = (LinearLayout) getView().findViewById(R.id.group_ly);
         //联系人
-        contactLy = (RelativeLayout) getView().findViewById(R.id.contact_ly);
+//        contactLy = (RelativeLayout) getView().findViewById(R.id.contact_ly);
         //有新朋友红点标识
         dotView = getView().findViewById(R.id.nav_red_dot);
         //是否有添加好友的请求
@@ -123,15 +123,15 @@ public class MyConversationListFragment extends EaseBaseFragment {
         }else{
             dotView.setVisibility(View.GONE);
         }
-        groupLy.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //跳转到群组页面
-                //startActivity(new Intent(getActivity(), GroupsActivity.class));
-                startActivity(new Intent(getActivity(), InterestGroupActivity.class));
-
-            }
-        });
+//        groupLy.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //跳转到群组页面
+//                //startActivity(new Intent(getActivity(), GroupsActivity.class));
+//                startActivity(new Intent(getActivity(), InterestGroupActivity.class));
+//
+//            }
+//        });
         contactLy.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
