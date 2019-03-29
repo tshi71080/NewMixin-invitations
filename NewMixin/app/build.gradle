@@ -12,7 +12,7 @@ android {
         versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
-            abiFilters "armeabi-v7a","arm64-v8a","x86","x86_64"
+            abiFilters "armeabi","armeabi-v7a","arm64-v8a","x86","x86_64"
         }
         multiDexEnabled true
         manifestPlaceholders = [
@@ -38,7 +38,7 @@ android {
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs']
+            jniLibs.srcDirs = ['libs','libs/*']
         }
     }
 
@@ -152,10 +152,11 @@ android {
         // 极光推送
         implementation 'cn.jiguang.sdk:jpush:3.1.6'
         implementation 'cn.jiguang.sdk:jcore:1.2.5'
-
+        //二维码识别
         implementation 'com.google.zxing:core:3.3.0'
-        //环信视频录制
-        api project(':SmallVideoLib2')
+        //短视频录制
+        implementation 'com.mabeijianxi:small-video-record2:2.0.3@aar'
+
     }
 
 }
