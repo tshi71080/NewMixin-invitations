@@ -128,7 +128,8 @@
         <activity android:name=".ui.login.RegisterActivity" />
         <activity
             android:name=".ui.main.PubActivity"
-            android:theme="@style/PubTheme" />
+            android:theme="@style/PubTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.main.MainActivity"
             android:launchMode="singleTask"
@@ -136,28 +137,29 @@
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".ui.login.SchoolActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-        <activity android:name=".ui.login.DepartmentActivity" />
-        <activity android:name=".ui.login.GradeActivity" />
-        <activity android:name=".ui.mine.setting.SettingActivity" />
-        <activity android:name=".ui.mine.MyCodeActivity" />
-        <activity android:name=".ui.mine.MyVisitorActivity" />
-        <activity android:name=".ui.mine.MyMomentActivity" />
-        <activity android:name=".ui.mine.AlbumActivity" />
-        <activity android:name=".ui.mine.MyReplyActivity" />
-        <activity android:name=".ui.mine.SelfMediaActivity" />
-        <activity android:name=".ui.mine.BlackListActivity" />
-        <activity android:name=".ui.mine.VipCenterActivity" />
-        <activity android:name=".ui.mine.setting.ChangePswActivity" />
-        <activity android:name=".ui.mine.setting.ChangePhoneActivity" />
-        <activity android:name=".ui.mine.setting.FeedbackActivity" />
-        <activity android:name=".ui.mine.setting.RealNameAuthActivity" />
-        <activity android:name=".ui.mine.MyScoreActivity" />
-        <activity android:name=".ui.mine.UserInfoModifyAct" />
-        <activity android:name=".ui.mine.baseinfo.SignatureActivity" />
-        <activity android:name=".ui.mine.baseinfo.BirthdayActivity" />
-        <activity android:name=".ui.mine.MyFansActivity" />
-        <activity android:name=".ui.mine.AttentionActivity" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.login.DepartmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.login.GradeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.setting.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.MyCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.MyVisitorActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.MyMomentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.AlbumActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.MyReplyActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.SelfMediaActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.BlackListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.VipCenterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.setting.ChangePswActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.setting.ChangePhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.setting.FeedbackActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.setting.RealNameAuthActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.MyScoreActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.UserInfoModifyAct" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.baseinfo.SignatureActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.baseinfo.BirthdayActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.MyFansActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.AttentionActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.mine.baseinfo.AddressActivity" />
         <activity android:name=".ui.mine.baseinfo.HobbyActivity" />
 
@@ -586,70 +588,73 @@
 
 
         <!-- 图片选择页面 -->
-        <activity android:name=".ui.multiimage.addpic.ImageBucketChooseActivity" />
-        <activity android:name=".ui.multiimage.addpic.ImageChooseActivity" />
+        <activity android:name=".ui.multiimage.addpic.ImageBucketChooseActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.multiimage.addpic.ImageChooseActivity" android:screenOrientation="portrait"/>
         <!-- 图片选择页面 -->
 
 
         <!-- 视频选择页面 -->
         <activity
             android:name="vn.tungdx.mediapicker.activities.MediaPickerActivity"
-            android:theme="@style/MediaPickerTheme" />
+            android:theme="@style/MediaPickerTheme" android:screenOrientation="portrait"/>
         <!-- 视频选择页面 -->
 
 
         <!-- 视频播放页面 -->
-        <activity android:name=".ui.pub.video.VideoPlayActivity" />
+        <activity android:name=".ui.pub.video.VideoPlayActivity" android:screenOrientation="portrait"/>
         <!-- 视频播放页面 -->
 
-        <activity android:name=".ui.mine.ScoreDetailActivity" />
-        <activity android:name=".ui.discover.PeopleNearbyActivity" />
-        <activity android:name=".ui.discover.GroupNearbyActivity" />
-        <activity android:name=".ui.discover.InterestGroupActivity" />
-        <activity android:name=".ui.discover.GroupDetailActivity" />
-        <activity android:name=".ui.pub.note.PubNotesActivity" />
-        <activity android:name=".ui.pub.video.PubVideoActivity" />
-        <activity android:name=".ui.discover.BroSisActivity" />
-        <activity android:name=".ui.discover.UsedMarketActivity" />
-        <activity android:name=".ui.message.ContactListActivity" />
-        <activity android:name=".ui.discover.AlumnActivity" />
-        <activity android:name=".ui.discover.MomentNearActivity" />
-        <activity android:name=".ui.discover.RecommendFriendActivity" />
+        <activity android:name=".ui.mine.ScoreDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.PeopleNearbyActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupNearbyActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.InterestGroupActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.pub.note.PubNotesActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.pub.video.PubVideoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.BroSisActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.UsedMarketActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.message.ContactListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.AlumnActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.MomentNearActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.RecommendFriendActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.home.AddCircleActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-        <activity android:name=".ui.home.MyCircleActivity" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.home.MyCircleActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.home.ReportActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-        <activity android:name=".ui.home.MomentDetailActivity" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.home.MomentDetailActivity" android:screenOrientation="portrait"/>
 
         <!-- 好友管理对话框 -->
         <activity
             android:name=".ui.message.FriendEditDialog"
-            android:theme="@style/act_compat_dialog" />
+            android:theme="@style/act_compat_dialog"
+            android:screenOrientation="portrait"/>
         <!-- 好友管理对话框 -->
 
-        <activity android:name=".ui.message.EditGroupActivity" />
-        <activity android:name=".ui.message.GroupListActivity" />
-        <activity android:name=".ui.message.PhoneFriendActivity" />
-        <activity android:name=".ui.chat.UserProfileAct" />
-        <activity android:name=".ui.discover.GroupMemberDetailActivity" />
-        <activity android:name=".ui.discover.GroupPswActivity" />
-        <activity android:name=".ui.discover.SearchUserActivity" />
-        <activity android:name=".ui.discover.SearchGroupActivity" />
-        <activity android:name=".ui.home.FriendProfileActivity" />
-        <activity android:name=".ui.login.GetPswActivity" />
-        <activity android:name=".widget.WebViewActivity" />
-        <activity android:name=".ui.mine.setting.InviteCodeActivity" />
-        <activity android:name=".ui.discover.CreateGroupActivity" />
-        <activity android:name=".ui.discover.GroupNameActivity" />
-        <activity android:name=".ui.discover.GroupIntroActivity" />
-        <activity android:name=".ui.discover.GroupNoticeActivity" />
-        <activity android:name=".ui.discover.GroupMembersActivity" />
-        <activity android:name=".ui.discover.InviteFriendGroupActivity" />
-        <activity android:name=".ui.pub.forward.ForwardActivity" />
-        <activity android:name="com.hyphenate.chatui.scanner.ScannerActivity" />
+        <activity android:name=".ui.message.EditGroupActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.message.GroupListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.message.PhoneFriendActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.chat.UserProfileAct" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupMemberDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupPswActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.SearchUserActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.SearchGroupActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.home.FriendProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.login.GetPswActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".widget.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.mine.setting.InviteCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.CreateGroupActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupNameActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupIntroActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupNoticeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupMembersActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.InviteFriendGroupActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.pub.forward.ForwardActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.hyphenate.chatui.scanner.ScannerActivity" android:screenOrientation="portrait"/>
 
         <service android:name=".util.GPSService" />
         <!-- 微信回调 -->
@@ -657,6 +662,7 @@
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <!-- 极光推送开始 -->
@@ -803,16 +809,17 @@
 
 
         <!-- 视频录制 -->
-        <activity android:name="com.mabeijianxi.smallvideorecord2.MediaRecorderActivity" />
-        <activity android:name=".ui.message.NewFriedsApplyActivity" />
-        <activity android:name=".ui.areacode.AreaCodeActivity" />
-        <activity android:name=".ui.multisend.MultiChooseActivity" />
-        <activity android:name=".ui.discover.GroupCodeActivity" />
+        <activity android:name="com.mabeijianxi.smallvideorecord2.MediaRecorderActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.message.NewFriedsApplyActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.areacode.AreaCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.multisend.MultiChooseActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupCodeActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.multisend.MultiSendActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity android:name=".ui.discover.GroupTransformActivity" />
-        <activity android:name="com.hyphenate.chatui.ui.NewRecordVideoActivity" />
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.discover.GroupTransformActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.hyphenate.chatui.ui.NewRecordVideoActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -267,40 +267,62 @@ public class GroupMembersActivity extends AppCompatActivity implements GroupMemb
             boolean currentUserisOwner = isGroupOwner(group,item.getMember_im_name());
             adminList = group.getAdminList();
             boolean isAdmin = isCurrentAdmin(group);
-            //不是自己并且不是群主才显示移除按钮
-            if (!b1&&!currentUserisOwner) {
-                removeTv.setVisibility(View.VISIBLE);
-                //isCanTalk.setVisibility(View.VISIBLE);
-                //isCanTalk.setEnabled(true);
-            }else{
-                removeTv.setVisibility(View.GONE);
-            }
-            //登录账号是群主并且不是群主自己
-            if(b2&&!b1){
-                addToAdmin.setVisibility(View.VISIBLE);
-                //判断是否是管理员(0普通用户，1群主，2管理员)
-                if(item.getType().equals("2")){
-                    addToAdmin.setText("取消管理员");
-                    addToAdmin.setTextColor(getResources().getColor(R.color.boy_level_color));
-                    addToAdmin.setBackgroundResource(R.drawable.is_admin_bg);
-                }else{
-                    addToAdmin.setText("设为管理员");
-                    addToAdmin.setTextColor(getResources().getColor(R.color.gray));
-                    addToAdmin.setBackgroundResource(R.drawable.cant_talk_bg);
-                }
-            }else{
-                addToAdmin.setVisibility(View.GONE);
-            }
+            boolean currentUserisAdmin = isGroupAdmin(item.getMember_im_name());
 
-            //禁言中
-            if(isInMuteList(item.getMember_im_name())){
-                isCanTalk.setText("解禁");
-                isCanTalk.setTextColor(getResources().getColor(R.color.gray));
-                isCanTalk.setBackgroundResource(R.drawable.cant_talk_bg);
-            }else{
-                isCanTalk.setText("禁言");
-                isCanTalk.setTextColor(getResources().getColor(R.color.color_yellow));
-                isCanTalk.setBackgroundResource(R.drawable.can_talk_bg);
+            if (b2 || isAdmin){//当前登陆账号是群主或管理员
+                if(b1){//是否自己
+                    removeTv.setVisibility(View.GONE);
+                    addToAdmin.setVisibility(View.GONE);
+                    isCanTalk.setVisibility(View.GONE);
+                }else{//其他人
+                    if(currentUserisOwner){//群主
+                        removeTv.setVisibility(View.GONE);
+                        addToAdmin.setVisibility(View.GONE);
+                        isCanTalk.setVisibility(View.GONE);
+                    }else if(currentUserisAdmin){//管理员
+                        if(b2){//当前登陆账号是群主
+                            removeTv.setVisibility(View.VISIBLE);
+                            addToAdmin.setVisibility(View.VISIBLE);
+                            addToAdmin.setText("取消管理员");
+                            addToAdmin.setTextColor(getResources().getColor(R.color.boy_level_color));
+                            addToAdmin.setBackgroundResource(R.drawable.is_admin_bg);
+                            isCanTalk.setVisibility(View.VISIBLE);
+                            if(isInMuteList(item.getMember_im_name())){
+                                isCanTalk.setText("解禁");
+                                isCanTalk.setTextColor(getResources().getColor(R.color.gray));
+                                isCanTalk.setBackgroundResource(R.drawable.cant_talk_bg);
+                            }else{
+                                isCanTalk.setText("禁言");
+                                isCanTalk.setTextColor(getResources().getColor(R.color.color_yellow));
+                                isCanTalk.setBackgroundResource(R.drawable.can_talk_bg);
+                            }
+                        }else{//当前登陆账号非群主
+                            removeTv.setVisibility(View.GONE);
+                            addToAdmin.setVisibility(View.GONE);
+                            isCanTalk.setVisibility(View.GONE);
+                        }
+                    }else{//普通成员
+                        removeTv.setVisibility(View.VISIBLE);
+                        addToAdmin.setVisibility(View.VISIBLE);
+                        addToAdmin.setText("设为管理员");
+                        addToAdmin.setTextColor(getResources().getColor(R.color.gray));
+                        addToAdmin.setBackgroundResource(R.drawable.cant_talk_bg);
+                        isCanTalk.setVisibility(View.VISIBLE);
+                        if(isInMuteList(item.getMember_im_name())){
+                            isCanTalk.setText("解禁");
+                            isCanTalk.setTextColor(getResources().getColor(R.color.gray));
+                            isCanTalk.setBackgroundResource(R.drawable.cant_talk_bg);
+                        }else{
+                            isCanTalk.setText("禁言");
+                            isCanTalk.setTextColor(getResources().getColor(R.color.color_yellow));
+                            isCanTalk.setBackgroundResource(R.drawable.can_talk_bg);
+                        }
+                    }
+                }
+            }else{//当前登陆账号是普通成员
+                removeTv.setVisibility(View.GONE);
+                addToAdmin.setVisibility(View.GONE);
+                isCanTalk.setVisibility(View.GONE);
             }
 
             removeTv.setOnClickListener(new View.OnClickListener() {
@@ -435,6 +457,17 @@ public class GroupMembersActivity extends AppCompatActivity implements GroupMemb
             return false;
         }
         return owner.equals(userName);
+    }
+
+    boolean isGroupAdmin(String username){
+        synchronized (adminList) {
+            for (String admin : adminList) {
+                if (username.equals(admin)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
